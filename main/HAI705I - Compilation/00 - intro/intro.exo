@@ -1,0 +1,57 @@
+Écrire une fonction qui teste si un entier est un carré ;
+
+var n : integer
+
+f(n : integer) : boolean
+var i : integer
+i := 0
+f := false
+while i*i < n do
+    i := i+1
+if i*i = n then
+    f := true
+else 
+    skip
+
+
+Écrire la fonction factorielle de manière récursive ;
+
+var n : integer
+
+f(n : integer) : integer
+if n = 0 then
+    f := 1
+else
+    f := n*f(n-1)
+
+
+Écrire un programme qui alloue un tableau d’entiers d’une taille demandée à l’utilisateur, et appelle une procédure pour l’initialiser ;
+
+var t : array of integer
+n : integer
+
+f(t : array of integer, n : integer) : array of integer
+n := n-1
+while n>=0 do
+    t[n] := n // read() pour une initialisation manuelle
+    n := n-1
+
+n := read()
+t := array of integer[n]
+f(t, n)
+
+
+Écrire une fonction qui teste si tous les éléments d’un tableau d’entiers passé en paramètre sont positifs ;
+
+var t : array of integer
+var n : integer
+
+f(t : array of integer, n : integer) : integer
+f := true
+n := n-1
+while n>=0 and t[n]>=0 do
+    n := n-1
+if n>=0 then
+    f := false
+else
+    skip

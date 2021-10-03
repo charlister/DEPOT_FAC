@@ -1,0 +1,33 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class AnimalImpl extends UnicastRemoteObject implements IAnimal {
+
+	protected AnimalImpl() throws RemoteException {
+	}
+
+	@Override
+	public String getNom() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNomMaitre() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getEspece() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getRace() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

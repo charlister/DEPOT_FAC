@@ -1,0 +1,29 @@
+import java.rmi.RemoteException;
+
+public class AnimalImpl implements IAnimal {
+
+	@Override
+	public String getNom() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNomMaitre() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getEspece() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getRace() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

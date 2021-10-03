@@ -1,0 +1,49 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class AnimalImpl extends UnicastRemoteObject implements IAnimal {
+	String nom;
+	String nomMaitre;
+	String espece;
+	String race;
+	
+	public  AnimalImpl(String _nom,) throws RemoteException {
+		
+	}
+
+	@Override
+	public String getNom() throws RemoteException {
+		return nom;
+	}
+
+	@Override
+	public String getNomMaitre() throws RemoteException {
+		return nomMaitre;
+	}
+
+	@Override
+	public String getEspece() throws RemoteException {
+		return espece;
+	}
+
+	@Override
+	public String getRace() throws RemoteException {
+		return race;
+	}
+	
+	public void printNom() throws RemoteException{
+		System.out.println("nom : "+nom);
+	}
+
+	public void printNomMaitre() throws RemoteException{
+		System.out.println("nom maître : "+nomMaitre);
+	}
+	
+	public void printEspece() throws RemoteException{
+		System.out.println("espèce : "+espece);
+	}
+	
+	public void printRace() throws RemoteException{
+		System.out.println("race : "+race);
+	}
+}

@@ -1,0 +1,3 @@
+ssh -X jean-charles.alla@etu.umontpellier.fr@x2go.umontpellier.fr
+
+cd Documents/M1/S1/Programmation\ repartie/TD-TP/codeFourniExo1/bin/
