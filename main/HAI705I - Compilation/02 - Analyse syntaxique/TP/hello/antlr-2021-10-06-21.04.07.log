@@ -1,0 +1,6 @@
+2021-10-06 21:04:04:788 grammar LogManager.java:25 before: (COMBINED_GRAMMAR Hello (RULES (RULE r (BLOCK (ALT 'hello' ID))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-z])))))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-06 21:04:04:804 grammar LogManager.java:25 after: (COMBINED_GRAMMAR Hello (RULES (RULE r (BLOCK (ALT 'hello' ID))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-z])))))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-06 21:04:04:851 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR Hello (RULES (RULE r (BLOCK (ALT 'hello' ID)))))
+2021-10-06 21:04:04:851 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR HelloLexer (RULES (RULE T__0 (BLOCK (ALT 'hello'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-z])))))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-06 21:04:06:829 semantics LogManager.java:25 tokens={EOF=-1, T__0=1, ID=2, WS=3}
+2021-10-06 21:04:06:829 semantics LogManager.java:25 strings={'hello'=1}
