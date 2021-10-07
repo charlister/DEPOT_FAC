@@ -1,0 +1,14 @@
+2021-10-07 21:10:27:546 grammar LogManager.java:25 before: (COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE integer (BLOCK (ALT Number) (ALT '-' Number))) (RULE Number (BLOCK (ALT [0-9]))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 21:10:27:583 grammar LogManager.java:25 after: (COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE integer (BLOCK (ALT Number) (ALT '-' Number))) (RULE Number (BLOCK (ALT [0-9]))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 21:10:27:622 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE integer (BLOCK (ALT Number) (ALT '-' Number)))))
+2021-10-07 21:10:27:622 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR GPPLexer (RULES (RULE T__0 (BLOCK (ALT 'integer'))) (RULE T__1 (BLOCK (ALT 'boolean'))) (RULE T__2 (BLOCK (ALT 'array'))) (RULE T__3 (BLOCK (ALT 'of'))) (RULE T__4 (BLOCK (ALT '-'))) (RULE Number (BLOCK (ALT [0-9]))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 21:10:28:192 semantics LogManager.java:25 tokens={EOF=-1, T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, Number=6, WS=7}
+2021-10-07 21:10:28:192 semantics LogManager.java:25 strings={'integer'=1, 'boolean'=2, 'array'=3, 'of'=4, '-'=5}
+2021-10-07 21:10:28:196 LL1 LogManager.java:25 
+DECISION 0 in rule type
+2021-10-07 21:10:28:202 LL1 LogManager.java:25 look=[1, 2, 3]
+2021-10-07 21:10:28:202 LL1 LogManager.java:25 LL(1)? true
+2021-10-07 21:10:28:202 LL1 LogManager.java:25 
+DECISION 1 in rule integer
+2021-10-07 21:10:28:202 LL1 LogManager.java:25 look=[6, 5]
+2021-10-07 21:10:28:202 LL1 LogManager.java:25 LL(1)? true

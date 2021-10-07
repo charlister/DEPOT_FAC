@@ -1,0 +1,30 @@
+2021-10-07 22:26:29:247 grammar LogManager.java:25 before: (COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE constante (BLOCK (ALT Int) (ALT 'true') (ALT 'false'))) (RULE Int (BLOCK (ALT Number) (ALT '-' Number))) (RULE Number (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE uop (BLOCK (ALT '-') (ALT 'not'))) (RULE bop (BLOCK (ALT '+') (ALT '-') (ALT '*') (ALT '/') (ALT 'and') (ALT 'or') (ALT '<') (ALT '<=') (ALT '=') (ALT '!=') (ALT '>=') (ALT '>'))) (RULE target (BLOCK (ALT 'read') (ALT 'write') (ALT Func))) (RULE Func (BLOCK (ALT (+ (BLOCK (ALT [a-z]))) '(' (* (BLOCK (ALT [a-z]))) ')'))) (RULE expr (BLOCK (ALT constante) (ALT uop expr) (ALT expr bop expr))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 22:26:29:267 grammar LogManager.java:25 after: (COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE constante (BLOCK (ALT (SET Int 'true' 'false')))) (RULE Int (BLOCK (ALT Number) (ALT '-' Number))) (RULE Number (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE uop (BLOCK (ALT (SET '-' 'not')))) (RULE bop (BLOCK (ALT (SET '+' '-' '*' '/' 'and' 'or' '<' '<=' '=' '!=' '>=' '>')))) (RULE target (BLOCK (ALT (SET 'read' 'write' Func)))) (RULE Func (BLOCK (ALT (+ (BLOCK (ALT [a-z]))) '(' (* (BLOCK (ALT [a-z]))) ')'))) (RULE expr (BLOCK (ALT constante) (ALT uop expr) (ALT expr bop expr))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 22:26:29:300 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR GPP (RULES (RULE type (BLOCK (ALT 'integer') (ALT 'boolean') (ALT 'array' 'of' type))) (RULE constante (BLOCK (ALT (SET Int 'true' 'false')))) (RULE uop (BLOCK (ALT (SET '-' 'not')))) (RULE bop (BLOCK (ALT (SET '+' '-' '*' '/' 'and' 'or' '<' '<=' '=' '!=' '>=' '>')))) (RULE target (BLOCK (ALT (SET 'read' 'write' Func)))) (RULE expr (BLOCK (ALT constante) (ALT uop expr) (ALT expr bop expr)))))
+2021-10-07 22:26:29:300 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR GPPLexer (RULES (RULE T__0 (BLOCK (ALT 'integer'))) (RULE T__1 (BLOCK (ALT 'boolean'))) (RULE T__2 (BLOCK (ALT 'array'))) (RULE T__3 (BLOCK (ALT 'of'))) (RULE T__4 (BLOCK (ALT 'true'))) (RULE T__5 (BLOCK (ALT 'false'))) (RULE T__6 (BLOCK (ALT '-'))) (RULE T__7 (BLOCK (ALT 'not'))) (RULE T__8 (BLOCK (ALT '+'))) (RULE T__9 (BLOCK (ALT '*'))) (RULE T__10 (BLOCK (ALT '/'))) (RULE T__11 (BLOCK (ALT 'and'))) (RULE T__12 (BLOCK (ALT 'or'))) (RULE T__13 (BLOCK (ALT '<'))) (RULE T__14 (BLOCK (ALT '<='))) (RULE T__15 (BLOCK (ALT '='))) (RULE T__16 (BLOCK (ALT '!='))) (RULE T__17 (BLOCK (ALT '>='))) (RULE T__18 (BLOCK (ALT '>'))) (RULE T__19 (BLOCK (ALT 'read'))) (RULE T__20 (BLOCK (ALT 'write'))) (RULE Int (BLOCK (ALT Number) (ALT '-' Number))) (RULE Number (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE Func (BLOCK (ALT (+ (BLOCK (ALT [a-z]))) '(' (* (BLOCK (ALT [a-z]))) ')'))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip)))))
+2021-10-07 22:26:30:040 left-recursion LogManager.java:25 expr
+    :   ( {} constante<tokenIndex=156> 
+        | uop<tokenIndex=160> expr<tokenIndex=162,p=2> 
+        )
+        (
+          {precpred(_ctx, 1)}?<p=1> bop<tokenIndex=168> expr<tokenIndex=170,p=2>
+        )*
+    ;
+2021-10-07 22:26:30:049 grammar LogManager.java:25 added: (RULE expr (BLOCK (ALT (BLOCK (ALT {} (constante (ELEMENT_OPTIONS (= tokenIndex 156)))) (ALT (uop (ELEMENT_OPTIONS (= tokenIndex 160))) (expr (ELEMENT_OPTIONS (= tokenIndex 162) (= p 2))))) (* (BLOCK (ALT ({precpred(_ctx, 1)}? (ELEMENT_OPTIONS (= p 1))) (bop (ELEMENT_OPTIONS (= tokenIndex 168))) (expr (ELEMENT_OPTIONS (= tokenIndex 170) (= p 2)))))))))
+2021-10-07 22:26:30:050 semantics LogManager.java:25 tokens={EOF=-1, T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, T__17=18, T__18=19, T__19=20, T__20=21, Int=22, Number=23, Func=24, WS=25}
+2021-10-07 22:26:30:050 semantics LogManager.java:25 strings={'integer'=1, 'boolean'=2, 'array'=3, 'of'=4, 'true'=5, 'false'=6, '-'=7, 'not'=8, '+'=9, '*'=10, '/'=11, 'and'=12, 'or'=13, '<'=14, '<='=15, '='=16, '!='=17, '>='=18, '>'=19, 'read'=20, 'write'=21}
+2021-10-07 22:26:30:061 LL1 LogManager.java:25 
+DECISION 0 in rule type
+2021-10-07 22:26:30:061 LL1 LogManager.java:25 look=[1, 2, 3]
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 LL(1)? true
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 
+DECISION 1 in rule expr
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 look=[{5..6, 22}, {7..8}]
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 LL(1)? true
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 
+DECISION 2 in rule expr
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 look=[null, null]
+2021-10-07 22:26:30:063 LL1 LogManager.java:25 LL(1)? false
+2021-10-07 22:26:30:170 action-translator LogManager.java:25 translate 
+2021-10-07 22:26:30:172 action-translator LogManager.java:25 translate precpred(_ctx, 1)
+2021-10-07 22:26:30:174 action-translator LogManager.java:25 translate precpred(_ctx, 1)
